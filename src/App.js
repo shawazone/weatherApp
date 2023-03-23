@@ -1,9 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState} from 'react';  
-import { useEffect } from 'react';
-import PlacesAutocomplete ,
- {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
+import PlacesAutocomplete from 'react-places-autocomplete';
 const api = {
   key: "e6e93798493efd31248c956d259facf1",
   base: "https://api.openweathermap.org/data/2.5/"
@@ -11,51 +8,39 @@ const api = {
 function App() {
 const [query, setQuery] = useState('');
 const [weather , setWeather] = useState({});
-const [error , setError]= useState(false);
-const [address ,setAddress]= useState('');
+
 
 
 
 
 const handleSelect = async value => {
-  // const results = await geocodeByAddress(value);
-  // console.log(results);
-  // setAddress(value);
-  
-  search();
+  search(value);
 }
 
 
-const handleKeyDown = (event) => {
-  if (event.key === 'Enter') {
-    // console.log(query);
-    // search();
-
-  
-  }
-
-
-}
+// const handleKeyDown = (event) => {
+//   if (event.key === 'Enter') { }
+// }
 
 
 
 
-const search = async( event )=> {
+const search = async(  value )=> {
  
 
   try {
   
-  const response = await fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+  const response = await fetch(`${api.base}weather?q=${value}&units=metric&APPID=${api.key}`)
       .then(res=> res.json())
       .then(result => {
         setWeather(result);
         setQuery('');
-
         console.log(response);
+       
         
       });
   } catch (error) {
-   
+    
    
   }
   
@@ -77,7 +62,7 @@ const search = async( event )=> {
 
    const searchOptions = {
     types: ['(cities)'],
-    // componentRestrictions: { country: 'us' }, // replace 'us' with the country code you want to restrict to
+    
   };
   return (
 
@@ -89,19 +74,6 @@ const search = async( event )=> {
       
        <main>
   
-        {/* <div className='search-box'> */}
-           {/* <input 
-           type="search"
-           className='search-bar'
-           placeholder='search...'
-           onChange={(event) => setQuery(event.target.value)}
-            onKeyDown={handleKeyDown} 
-            value={query}
-           
-         
-           
-           >
-           </input> */}
           
           <div className='search-box'>
       <PlacesAutocomplete
@@ -145,7 +117,7 @@ const search = async( event )=> {
       <div className='weather-box'>
         <div className='temp'> {Math.round(weather.main.temp)}°c </div>
         {/* <div className='weather'>{weather.weather[0].main}</div> */}
-        {/* <h1>{weather.main.temp}</h1> */}
+     
       </div>
 </div>
 ) : (!query)?(
