@@ -13,7 +13,7 @@ body{
   /* align-items: center; */
   margin-left: auto;
   margin-right: auto;
-  width:50%;
+  width:100%;
   height: 90%;
 }
 
@@ -119,21 +119,28 @@ text-align: center;
 }
 
 .weather-box .temp {
+  width: 100%;
+  font-weight: 90%;
   position: relative;
   display: inline-block ;
- margin: 20% 0%;
+ margin: 10% 1%;
  background-color: rgba(255, 255, 255, 0.2);
  border-radius: 16px;
 
  padding: 5% 10%;
 
  color: #fff;
- font-size: 350%;
- font-weight:900 ;
+ font-size: 200%;
+ font-weight:110% ;
 
  text-shadow: 3px 6px rgba(50,50,70,0.5);
  text-align: center;
  box-shadow: 3px 6px rgba(0,0,0,0.2);
+ @media screen and (max-width: 600px) {
+  div.example {
+    font-size: 30px;
+  }
+}
 }
 
 .weather-box .weather{
