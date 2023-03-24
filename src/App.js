@@ -9,7 +9,7 @@ function App() {
 const [query, setQuery] = useState('');
 const [weather , setWeather] = useState({});
 
-
+//hacks onnnn
 
 
 
@@ -76,6 +76,7 @@ const search = async(  value )=> {
   
           
           <div className='search-box'>
+            <p>hacks on</p>
       <PlacesAutocomplete
         value={query} 
         onChange={setQuery}
