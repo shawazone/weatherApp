@@ -44,6 +44,9 @@ body{
   .temp  {
     margin: 46% 1%;
   }
+  .main {
+    max-height: 100%;
+  }
 }
 
 
