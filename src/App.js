@@ -10,12 +10,9 @@ function App() {
   const [weather, setWeather] = useState({});
   const [weatherIcon, setWeatherIcon] = useState("");
 
-
   const handleSelect = async (value) => {
     search(value);
   };
-
- 
 
   const search = async (value) => {
     try {
@@ -26,51 +23,53 @@ function App() {
         .then((result) => {
           setWeather(result);
           setQuery("");
-          console.log(response);
-     
 
-          if (result.weather[0].main ==='Clear'){
-               console.log('Clear');
-                          setWeatherIcon('https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-512.png');
-          
-          } else if (result.weather[0].main ==='Drizzle'){
+         
 
-            setWeatherIcon('https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-30-512.png');
-       }
-          else if (result.weather[0].main ==='Clouds'){
-
-               setWeatherIcon('https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-22-512.png');
-          }else if (result.weather[0].main ==='Sunny'){
-
-               setWeatherIcon('https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-512.png');
-          }else if (result.weather[0].main ==='Mist'){
-
-               setWeatherIcon('https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-27-512.png');
-          }else if (result.weather[0].main ==='Rain'){
-
-                setWeatherIcon('https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-32-512.png');
-          }else if (result.weather[0].main ==='Haze'){
-
-            setWeatherIcon('https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-27-512.png');
-         } else if (result.weather[0].main ==='Thunderstorm'){
-
-          setWeatherIcon("https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-23-512.png");
-        } else if (result.weather[0].main ==='Snow'){
-          
-          setWeatherIcon("https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-24-512.png");
-    }
-     
-
- 
+          if (result.weather[0].main === "Clear") {
+            console.log("Clear");
+            setWeatherIcon(
+              "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-512.png"
+            );
+          } else if (result.weather[0].main === "Drizzle") {
+            setWeatherIcon(
+              "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-30-512.png"
+            );
+          } else if (result.weather[0].main === "Clouds") {
+            console.log("uwu");
+            setWeatherIcon(
+              "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-22-512.png"
+            );
+          } else if (result.weather[0].main === "Sunny") {
+            setWeatherIcon(
+              "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-512.png"
+            );
+          } else if (result.weather[0].main === "Mist") {
+            setWeatherIcon(
+              "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-27-512.png"
+            );
+          } else if (result.weather[0].main === "Rain") {
+            setWeatherIcon(
+              "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-32-512.png"
+            );
+          } else if (result.weather[0].main === "Haze") {
+            setWeatherIcon(
+              "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-27-512.png"
+            );
+          } else if (result.weather[0].main === "Thunderstorm") {
+            setWeatherIcon(
+              "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-23-512.png"
+            );
+          } else if (result.weather[0].main === "Snow") {
+            setWeatherIcon(
+              "https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-24-512.png"
+            );
+          } else if (result.weather[0].main === "Response"){
+            console.log(response);    
+          }
         });
-        
-    
-    } catch (error) {
-   
-    }
+    } catch (error) {}
   };
-
-
 
   const dateBuilder = (d) => {
     let months = [
@@ -125,6 +124,7 @@ function App() {
       }
     >
       <main>
+        
         <div className="search-box">
           <PlacesAutocomplete
             value={query}
@@ -166,6 +166,7 @@ function App() {
 
           <image></image>
         </div>
+        
         {typeof weather.main != "undefined" ? (
           <div>
             <div className="location-box">
