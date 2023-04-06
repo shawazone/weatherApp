@@ -187,15 +187,15 @@ function App() {
             </div>
           </div>
         ) : !query ? (
-          <div>
-            <div className="weather-box">
-              <div className="temp">please choose a city</div>
+          <div className="chooseAcity">
+            <div className="weather-box2">
+              <div className="temperory">please choose a city</div>
             </div>
           </div>
         ) : typeof weather.main === "undefined" ? (
           <div>
-            <div className="weather-box">
-              <div className="temp">city does not exist</div>
+            <div className="weather-box2">
+              <div className="temperory">city does not exist</div>
             </div>
           </div>
         ) : (

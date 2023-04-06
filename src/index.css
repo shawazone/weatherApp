@@ -162,8 +162,37 @@ text-align: center;
 margin: -57px 1%;
 padding: 3% 10%;
 }
+.weather-box2{
+  text-align: center;
+margin: 30% 7px ;
+padding: 3% 10%;
+
+
+width: 100%;
+font-weight: 90%;
+position: relative;
+display: inline-block ;
+
+background-color: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+
+
+
+color: #fff;
+font-size: 200%;
+font-weight:110% ;
+
+text-shadow: 3px 6px rgba(50,50,70,0.5);
+text-align: center;
+box-shadow: 3px 6px rgba(0,0,0,0.2);
+}
+
 .temp  {
   margin: 15% 1%;
+  padding: 17% 10%;
+}
+.temporary {
+  margin: 40% 1%;
   padding: 17% 10%;
 }
 .weather-box .temp {
